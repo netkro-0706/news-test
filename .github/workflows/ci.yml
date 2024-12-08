@@ -8,6 +8,7 @@ on:
       - develop
   pull_request:
     branches:
+      - main
       - master
       - develop
 
@@ -21,19 +22,18 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 22.12.0
-          # node-version: 18.18.0
+          node-version: 18.18.0
 
-      - name:
+      - name: Cache node modules
         uses: actions/cache@v2
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**package-lock.json') }}
-          restore-keys: ${{ runner.os }}-node-
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**pnpm-lock.json') }}
+          restore-keys: ${{ runner.os }}-pnpm-
 
       - name: Install dependencies
         run: pnpm install
 
       - name: Run
-        run: pnpm dev
+        run: pnpm build
         working-directory: ./app
