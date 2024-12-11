@@ -1,0 +1,28 @@
+{
+	"env": {
+		"browser": true, // 웹 브라우저에서 동작하는 코드 확인
+		"es2021": true // 최신 javascript 문법 사용
+	},
+	"extends": [
+		"eslint: recommended", // 기본적인 javascript 관련 규칙
+		"plugin: react/recommended", // React 관련
+		"plugin: @typescript-eslint/recommended" // typescript 관련
+	],
+	"parser": "@typescript-eslint/parser", // typescript 문법을 분석할 파서
+	"parserOptions": {
+		"ecmaVersion": "latest", // 최신 javascript 문법
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"jsx": true // React JSX문법
+		}
+	},
+	"plugins": [
+		"react", //React코드 검사
+		"@typescript-eslint" // Typescript 코드 검사
+	],
+	"rules": {
+		// quotes, semi 등은 prettier에서 설정했으므로 여기선 skip
+		"no-unused-vars": "off", // 사용하지 않는 변수의 기본경고 off
+		"@typescript-eslint/no-unused-vars": "warn" // 사용하지 않는 변수는 경고만
+	}
+}
