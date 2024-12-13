@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	semi: true, // 세미콜론 자동 넣기
 	singleQuote: true, // 따옴표 1개 2개
 	useTabs: true, // Tab으로 넣기
