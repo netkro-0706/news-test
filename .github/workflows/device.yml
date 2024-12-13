@@ -1,16 +1,12 @@
-name: CI
+name: Device
 
 on:
   push:
     branches:
-      - main
-      - master
-      - develop
+      - device-main
   pull_request:
     branches:
-      - main
-      - master
-      - develop
+      - device-main
 
 jobs:
   build:
